@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841432DE250AC3B600612F96 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841432DC250AC3B600612F96 /* ItemCollectionViewCell.swift */; };
+		841432DF250AC3B600612F96 /* ItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841432DD250AC3B600612F96 /* ItemCollectionViewCell.xib */; };
+		841432E1250AE74A00612F96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841432E0250AE74A00612F96 /* SceneDelegate.swift */; };
 		84E3E316250ABEF100C6D2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3E315250ABEF100C6D2BC /* AppDelegate.swift */; };
-		84E3E318250ABEF100C6D2BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3E317250ABEF100C6D2BC /* SceneDelegate.swift */; };
 		84E3E31A250ABEF100C6D2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E3E319250ABEF100C6D2BC /* ViewController.swift */; };
 		84E3E31D250ABEF100C6D2BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E3E31B250ABEF100C6D2BC /* Main.storyboard */; };
 		84E3E31F250ABEF200C6D2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E3E31E250ABEF200C6D2BC /* Assets.xcassets */; };
@@ -27,9 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841432DC250AC3B600612F96 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		841432DD250AC3B600612F96 /* ItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		841432E0250AE74A00612F96 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84E3E312250ABEF100C6D2BC /* GearSwap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GearSwap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E3E315250ABEF100C6D2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84E3E317250ABEF100C6D2BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84E3E319250ABEF100C6D2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84E3E31C250ABEF100C6D2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84E3E31E250ABEF200C6D2BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,10 +83,11 @@
 		84E3E314250ABEF100C6D2BC /* GearSwap */ = {
 			isa = PBXGroup;
 			children = (
+				84E3E337250AC0BC00C6D2BC /* Models */,
+				84E3E339250AC0DB00C6D2BC /* Presenters */,
+				84E3E338250AC0C700C6D2BC /* Views */,
 				84E3E315250ABEF100C6D2BC /* AppDelegate.swift */,
-				84E3E317250ABEF100C6D2BC /* SceneDelegate.swift */,
-				84E3E319250ABEF100C6D2BC /* ViewController.swift */,
-				84E3E31B250ABEF100C6D2BC /* Main.storyboard */,
+				841432E0250AE74A00612F96 /* SceneDelegate.swift */,
 				84E3E31E250ABEF200C6D2BC /* Assets.xcassets */,
 				84E3E320250ABEF200C6D2BC /* LaunchScreen.storyboard */,
 				84E3E323250ABEF200C6D2BC /* Info.plist */,
@@ -97,6 +102,31 @@
 				84E3E32E250ABEF200C6D2BC /* Info.plist */,
 			);
 			path = GearSwapTests;
+			sourceTree = "<group>";
+		};
+		84E3E337250AC0BC00C6D2BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84E3E338250AC0C700C6D2BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84E3E319250ABEF100C6D2BC /* ViewController.swift */,
+				84E3E31B250ABEF100C6D2BC /* Main.storyboard */,
+				841432DC250AC3B600612F96 /* ItemCollectionViewCell.swift */,
+				841432DD250AC3B600612F96 /* ItemCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84E3E339250AC0DB00C6D2BC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E3E322250ABEF200C6D2BC /* LaunchScreen.storyboard in Resources */,
+				841432DF250AC3B600612F96 /* ItemCollectionViewCell.xib in Resources */,
 				84E3E31F250ABEF200C6D2BC /* Assets.xcassets in Resources */,
 				84E3E31D250ABEF100C6D2BC /* Main.storyboard in Resources */,
 			);
@@ -201,8 +232,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E3E31A250ABEF100C6D2BC /* ViewController.swift in Sources */,
+				841432DE250AC3B600612F96 /* ItemCollectionViewCell.swift in Sources */,
 				84E3E316250ABEF100C6D2BC /* AppDelegate.swift in Sources */,
-				84E3E318250ABEF100C6D2BC /* SceneDelegate.swift in Sources */,
+				841432E1250AE74A00612F96 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -348,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -365,6 +397,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V3NB8DRHS;
 				INFOPLIST_FILE = GearSwap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,6 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7V3NB8DRHS;
 				INFOPLIST_FILE = GearSwap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
