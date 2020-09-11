@@ -16,21 +16,21 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBv-Rx-7yV">
-                        <rect key="frame" x="0.0" y="0.0" width="357" height="188"/>
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="176"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jk-lZ-plF">
-                        <rect key="frame" x="8" y="159" width="42" height="21"/>
+                        <rect key="frame" x="8" y="147" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enQ-XU-LeX">
-                        <rect key="frame" x="8" y="196" width="341" height="21"/>
+                        <rect key="frame" x="8" y="184" width="341" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-RN-xO5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmT-RN-xO5">
                         <rect key="frame" x="8" y="219" width="341" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -41,6 +41,7 @@
             <constraints>
                 <constraint firstItem="1jk-lZ-plF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="1It-rl-E68"/>
                 <constraint firstItem="UmT-RN-xO5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="43Z-2K-hI2"/>
+                <constraint firstItem="gBv-Rx-7yV" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.666" id="8dw-xE-9Gw"/>
                 <constraint firstItem="gBv-Rx-7yV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fla-cz-wcr"/>
                 <constraint firstAttribute="bottom" secondItem="UmT-RN-xO5" secondAttribute="bottom" constant="24" id="I47-Hb-Rvo"/>
                 <constraint firstItem="UmT-RN-xO5" firstAttribute="top" secondItem="enQ-XU-LeX" secondAttribute="bottom" constant="2" id="IwU-9p-gvG"/>

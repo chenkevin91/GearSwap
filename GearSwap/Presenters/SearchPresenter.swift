@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 class SearchPresenter {
     weak var view: SearchViewProtocol?
+    var items = [Item]()
+    var itemViewModels = [ItemViewModel]()
 
     func attach(_ view: SearchViewProtocol?) {
         self.view = view
@@ -20,14 +23,40 @@ class SearchPresenter {
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 guard let data = data, error == nil else {
-                    print("Request Error: \(error?.localizedDescription ?? "missing error")")
+                    print("Search Request Error: \(error?.localizedDescription ?? "missing error")")
                     return
                 }
 
                 if let searchResponse = self.parseSearchResponse(data) {
+                    self.items = self.items + searchResponse.data
+                    searchResponse.data.forEach { item in
+                        self.itemViewModels.append(ItemViewModel(name: item.name,
+                                                                 price: item.price.formattedToCurrency(),
+                                                                 seller: item.seller.username,
+                                                                 image: nil))
+                    }
+                    self.view?.update(itemViewModel: self.itemViewModels)
+                    
                     print(searchResponse.data[0].name)
                     print(searchResponse.data.count)
                 }
+
+            }.resume()
+        }
+    }
+
+    func getImage(for index: Int) {
+        let item = items[index]
+        let urlString = item.primary_image.thumb_url
+        if let url = URL(string: urlString) {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard let data = data, error == nil else {
+                    print("Image Request Error: \(error?.localizedDescription ?? "missing error")")
+                    return
+                }
+
+                self.itemViewModels[index].image = UIImage(data: data)
+                self.view?.update(itemViewModel: self.itemViewModels)
 
             }.resume()
         }

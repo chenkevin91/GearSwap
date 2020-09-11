@@ -8,16 +8,26 @@
 
 import UIKit
 
-protocol SearchViewProtocol: class {}
+protocol SearchViewProtocol: class {
+    func update(itemViewModel: [ItemViewModel])
+}
+
+struct ItemViewModel {
+    let name: String
+    let price: String
+    let seller: String
+    var image: UIImage?
+}
 
 class SearchViewController: UIViewController {
     @IBOutlet private (set) var collectionView: UICollectionView!
     @IBOutlet private (set) var searchBar: UISearchBar!
 
-    var presenter = SearchPresenter()
-
     private let sectionInsets = UIEdgeInsets(top: 24.0, left: 8.0, bottom: 24.0, right: 8.0)
     private let itemsPerRow: CGFloat = 2
+
+    var presenter = SearchPresenter()
+    var items = [ItemViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +49,32 @@ class SearchViewController: UIViewController {
     }
 }
 
-extension SearchViewController: SearchViewProtocol {}
+extension SearchViewController: SearchViewProtocol {
+    func update(itemViewModel: [ItemViewModel]) {
+        items = itemViewModel
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+}
 
 extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 125
+        return items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCellID", for: indexPath) as! ItemCollectionViewCell
+        let item = items[indexPath.row]
+
+        if let image = item.image {
+            cell.imageView.image = image
+        } else {
+            presenter.getImage(for: indexPath.row)
+        }
+        cell.nameLabel.text = item.name
+        cell.sellerLabel.text = item.seller
+        cell.priceLabel.text = item.price
 
         return cell
     }
@@ -83,7 +110,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         presenter.getSearchResults(with: "")
-        view.endEditing(true)
+        dismissKeyboard()
     }
 
 //    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
