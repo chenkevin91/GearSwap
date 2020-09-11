@@ -14,11 +14,15 @@ class SearchViewController: UIViewController {
     @IBOutlet private (set) var collectionView: UICollectionView!
     @IBOutlet private (set) var searchBar: UISearchBar!
 
+    var presenter = SearchPresenter()
+
     private let sectionInsets = UIEdgeInsets(top: 24.0, left: 8.0, bottom: 24.0, right: 8.0)
     private let itemsPerRow: CGFloat = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        presenter.attach(self)
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -78,8 +82,8 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        presenter.getSearchResults(with: "")
         view.endEditing(true)
-
     }
 
 //    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
