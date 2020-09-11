@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchViewController.swift
 //  GearSwap
 //
 //  Created by Kevin Chen on 9/10/20.
@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol SearchViewProtocol: class {}
+
+class SearchViewController: UIViewController {
     @IBOutlet private (set) var collectionView: UICollectionView!
+    @IBOutlet private (set) var searchBar: UISearchBar!
 
     private let sectionInsets = UIEdgeInsets(top: 24.0, left: 8.0, bottom: 24.0, right: 8.0)
     private let itemsPerRow: CGFloat = 2
@@ -20,10 +23,21 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCellID")
+
+        searchBar.delegate = self
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGestureRecognizer)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension SearchViewController: SearchViewProtocol {}
+
+extension SearchViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 125
     }
@@ -35,7 +49,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -60,4 +74,21 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
         return sectionInsets.left
     }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+
+    }
+
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        view.endEditing(true)
+//
+//    }
+//
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//
+//    }
+
 }

@@ -8,16 +8,20 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GearSwap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="GearSwap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-sk-cKJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-kf-QGa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="DtY-JX-aQl">
                                     <size key="itemSize" width="128" height="128"/>
@@ -40,7 +44,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VvE-kf-QGa" secondAttribute="bottom" id="8A1-kT-gtK"/>
-                            <constraint firstItem="VvE-kf-QGa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jxu-BW-YZq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P9b-sk-cKJ" secondAttribute="trailing" id="8eH-Ca-GVU"/>
+                            <constraint firstItem="P9b-sk-cKJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LDT-RP-TRe"/>
+                            <constraint firstItem="VvE-kf-QGa" firstAttribute="top" secondItem="P9b-sk-cKJ" secondAttribute="bottom" id="aX4-C8-ToP"/>
+                            <constraint firstItem="P9b-sk-cKJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gDb-Vq-JsK"/>
                             <constraint firstItem="VvE-kf-QGa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pLo-dd-Yke"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VvE-kf-QGa" secondAttribute="trailing" id="vpq-Tz-taq"/>
                         </constraints>
@@ -48,11 +55,12 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="VvE-kf-QGa" id="jZc-1v-BLn"/>
+                        <outlet property="searchBar" destination="P9b-sk-cKJ" id="PQz-gp-pxN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
