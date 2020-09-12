@@ -40,8 +40,8 @@ struct Category: Codable {
     let show_popular_models: Bool
     let icon_url: String?
     let image_url: String?
-    let has_models: Bool
-    let title_name: String
+    let has_models: Bool?
+    let title_name: String?
     let shipping_hint: String?
     let url: String
 }

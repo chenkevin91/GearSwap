@@ -78,6 +78,14 @@ extension SearchViewController: UICollectionViewDataSource {
 
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let thirdToLastIndex = items.count - 3
+        if indexPath.row == thirdToLastIndex {
+            presenter.getSearchResults()
+        }
+    }
+
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
@@ -109,7 +117,8 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        presenter.getSearchResults(with: "")
+        presenter.clearPreviousSearch()
+        presenter.getSearchResults(searchBar.text)
         dismissKeyboard()
     }
 
