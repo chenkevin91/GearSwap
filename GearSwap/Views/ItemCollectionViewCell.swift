@@ -13,17 +13,26 @@ class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private (set) var priceLabel: UILabel!
     @IBOutlet private (set) var nameLabel: UILabel!
     @IBOutlet private (set) var sellerLabel: UILabel!
+    @IBOutlet private (set) var gradientView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        if #available(iOS 13.0, *) {
-            layer.borderColor = UIColor.systemGray5.cgColor
-        } else {
-            layer.borderColor = UIColor.lightGray.cgColor
-        }
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = gradientView.bounds
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.darkGray.cgColor]
+        gradientView.layer.addSublayer(gradientLayer)
+
+        layer.borderColor = UIColor.grayBorder.cgColor
         layer.borderWidth = 1
         layer.cornerRadius = 4
-    }
 
+        priceLabel.font = .largeBoldFont
+        priceLabel.textColor = .white
+
+        nameLabel.font = .largeBoldFont
+
+        sellerLabel.font = .smallFont
+        sellerLabel.textColor = .darkGray
+    }
 }

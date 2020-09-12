@@ -13,6 +13,7 @@ extension Double {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = NSLocale.current
-        return numberFormatter.string(from:  NSNumber(value: self))!
+        numberFormatter.maximumFractionDigits = 0
+        return numberFormatter.string(from: NSNumber(value: self))!
     }
 }
