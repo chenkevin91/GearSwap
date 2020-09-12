@@ -9,7 +9,7 @@
 import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private (set) var imageView: UIImageView!
+    @IBOutlet private (set) var imageView: DownloadableImageView!
     @IBOutlet private (set) var priceLabel: UILabel!
     @IBOutlet private (set) var nameLabel: UILabel!
     @IBOutlet private (set) var sellerLabel: UILabel!
@@ -34,5 +34,12 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
         sellerLabel.font = .smallFont
         sellerLabel.textColor = .darkGray
+    }
+
+    func configure(title: String, price: String, seller: String, imageURL: String) {
+        nameLabel.text = title
+        priceLabel.text = price
+        sellerLabel.text = seller
+        imageView.getImage(from: imageURL)
     }
 }
