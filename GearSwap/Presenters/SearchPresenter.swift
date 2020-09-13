@@ -22,15 +22,15 @@ class SearchPresenter {
         self.view = view
     }
 
-    func getSearchResults(_ item: String? = nil) {
+    func getSearchResults(_ item: String? = nil, fromRefreshControl: Bool = false) {
         var urlComponent = URLComponents(string: "https://api.staging.sidelineswap.com/v1/facet_items")
         if item == nil, let previousItem = previousSearchedItem, let page = page {
-            guard hasNextPage else {
+            guard hasNextPage || fromRefreshControl else {
                 return
             }
             let itemQueryItem = URLQueryItem(name: "q", value: previousItem)
             let pageQueryItem = URLQueryItem(name: "page", value: String(page+1))
-            urlComponent?.queryItems = [itemQueryItem, pageQueryItem]
+            urlComponent?.queryItems = fromRefreshControl ? [itemQueryItem] : [itemQueryItem, pageQueryItem]
         } else {
             urlComponent?.queryItems = [URLQueryItem(name: "q", value: item)]
             previousSearchedItem = item
@@ -42,6 +42,7 @@ class SearchPresenter {
                 guard let data = data, error == nil else {
                     print("Search Request Error: \(error?.localizedDescription ?? "missing error")")
                     self.isSearchRequestRunning = false
+                    self.view?.update(status: "Sorry, something went wrong. Please try again.")
                     return
                 }
 
@@ -57,12 +58,15 @@ class SearchPresenter {
                                                                  imageURL: item.primary_image.thumb_url))
                     }
                     self.isSearchRequestRunning = false
-                    self.view?.update(itemViewModel: self.itemViewModels)
-                    self.view?.update(status: searchResponse.data.isEmpty ? "No results, please try again" : nil)
+                    if searchResponse.data.isEmpty {
+                        self.view?.update(status: "No results matching your search. Please try again.")
+                    } else {
+                        self.view?.update(itemViewModel: self.itemViewModels)
+                    }
                     
-                    print(searchResponse.data.first?.name ?? "no results")
-                    print(searchResponse.data.first?.price ?? "no results")
-                    print(searchResponse.data.count)
+                } else {
+                    self.isSearchRequestRunning = false
+                    self.view?.update(status: "Sorry, something went wrong. Please try again.")
                 }
             }.resume()
         }
@@ -73,6 +77,11 @@ class SearchPresenter {
         itemViewModels = []
         previousSearchedItem = nil
         page = nil
+    }
+
+    func clearItems() {
+        items = []
+        itemViewModels = []
     }
 
     private func parseSearchResponse(_ data: Data) -> SearchResponse? {

@@ -10,7 +10,7 @@ import UIKit
 
 protocol SearchViewProtocol: class {
     func update(itemViewModel: [ItemViewModel])
-    func update(status: String?)
+    func update(status: String)
 }
 
 struct ItemViewModel {
@@ -23,11 +23,12 @@ struct ItemViewModel {
 class SearchViewController: UIViewController {
     @IBOutlet private (set) var collectionView: UICollectionView!
     @IBOutlet private (set) var searchBar: UISearchBar!
-    @IBOutlet private (set) var statusView: UIView!
-    @IBOutlet private (set) var statusLabel: UILabel!
+    @IBOutlet private (set) var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private (set) var basketballImageView: UIImageView!
 
     private let sectionInsets = UIEdgeInsets(top: 24.0, left: 8.0, bottom: 24.0, right: 8.0)
     private let itemsPerRow: CGFloat = 2
+    private let refreshControl = UIRefreshControl()
 
     var presenter = SearchPresenter()
     var items = [ItemViewModel]()
@@ -40,8 +41,11 @@ class SearchViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCellID")
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshSearch), for: .valueChanged)
 
         searchBar.delegate = self
+        searchBar.placeholder = "Search for new and used gear"
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGestureRecognizer)
@@ -50,26 +54,35 @@ class SearchViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+
+    @objc func refreshSearch() {
+        presenter.clearItems()
+        presenter.getSearchResults(fromRefreshControl: true)
+        dismissKeyboard()
+    }
 }
 
 extension SearchViewController: SearchViewProtocol {
     func update(itemViewModel: [ItemViewModel]) {
         items = itemViewModel
         DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+            self.activityIndicator.stopAnimating()
+            self.collectionView.alpha = 1.0
             self.collectionView.reloadData()
         }
     }
 
-    func update(status: String?) {
-        if let status = status {
-            DispatchQueue.main.async {
-                self.statusView.isHidden = false
-                self.statusLabel.text = status
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.statusView.isHidden = true
-            }
+    func update(status: String) {
+        let alert = UIAlertController(title: nil, message: status, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alert.addAction(okayAction)
+
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+            self.activityIndicator.stopAnimating()
+            self.collectionView.alpha = 1.0
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
@@ -89,8 +102,8 @@ extension SearchViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let thirdToLastIndex = items.count - 3
-        if indexPath.row == thirdToLastIndex {
+        let fifthToLastIndex = items.count - 5
+        if indexPath.row == fifthToLastIndex {
             presenter.getSearchResults()
         }
     }
@@ -125,8 +138,15 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        presenter.clearPreviousSearch()
-        presenter.getSearchResults(searchBar.text)
-        dismissKeyboard()
+        if !(searchBar.text?.isEmpty ?? true) {
+            presenter.clearPreviousSearch()
+            presenter.getSearchResults(searchBar.text)
+            dismissKeyboard()
+
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+                self.collectionView.alpha = 0.15
+            }
+        }
     }
 }

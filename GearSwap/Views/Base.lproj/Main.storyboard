@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -40,44 +41,29 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1i-aO-dte">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find new and used gear" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0y6-OL-apR">
-                                        <rect key="frame" x="116" y="371" width="182.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="0y6-OL-apR" firstAttribute="centerY" secondItem="E1i-aO-dte" secondAttribute="centerY" id="Iwe-rZ-Asg"/>
-                                    <constraint firstItem="0y6-OL-apR" firstAttribute="centerX" secondItem="E1i-aO-dte" secondAttribute="centerX" id="Qr6-d7-Y58"/>
-                                </constraints>
-                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VB4-qy-eAV">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                                <color key="color" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VvE-kf-QGa" secondAttribute="bottom" id="8A1-kT-gtK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P9b-sk-cKJ" secondAttribute="trailing" id="8eH-Ca-GVU"/>
                             <constraint firstItem="P9b-sk-cKJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LDT-RP-TRe"/>
-                            <constraint firstItem="E1i-aO-dte" firstAttribute="top" secondItem="P9b-sk-cKJ" secondAttribute="bottom" id="WX9-r2-Zbh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E1i-aO-dte" secondAttribute="bottom" id="Ywx-GX-eKs"/>
                             <constraint firstItem="VvE-kf-QGa" firstAttribute="top" secondItem="P9b-sk-cKJ" secondAttribute="bottom" id="aX4-C8-ToP"/>
-                            <constraint firstItem="E1i-aO-dte" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dI7-aZ-OPM"/>
+                            <constraint firstItem="VB4-qy-eAV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bRv-qA-McT"/>
                             <constraint firstItem="P9b-sk-cKJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gDb-Vq-JsK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E1i-aO-dte" secondAttribute="trailing" id="ndz-SY-uYh"/>
                             <constraint firstItem="VvE-kf-QGa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pLo-dd-Yke"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VvE-kf-QGa" secondAttribute="trailing" id="vpq-Tz-taq"/>
+                            <constraint firstItem="VB4-qy-eAV" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="w4a-GC-IBS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="VB4-qy-eAV" id="oRT-sD-Jg2"/>
                         <outlet property="collectionView" destination="VvE-kf-QGa" id="jZc-1v-BLn"/>
                         <outlet property="searchBar" destination="P9b-sk-cKJ" id="PQz-gp-pxN"/>
-                        <outlet property="statusLabel" destination="0y6-OL-apR" id="up9-Zh-76e"/>
-                        <outlet property="statusView" destination="E1i-aO-dte" id="axy-ZN-tdv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
