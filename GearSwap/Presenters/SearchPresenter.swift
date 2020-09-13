@@ -17,9 +17,14 @@ class SearchPresenter {
     private var page: Int?
     private var hasNextPage = false
     private var isSearchRequestRunning = false
+    private let session: URLSessionProtocol
 
     func attach(_ view: SearchViewProtocol?) {
         self.view = view
+    }
+
+    init(session: URLSessionProtocol) {
+        self.session = session
     }
 
     func getSearchResults(_ item: String? = nil, fromRefreshControl: Bool = false) {
@@ -38,7 +43,7 @@ class SearchPresenter {
 
         if let url = urlComponent?.url, !isSearchRequestRunning {
             isSearchRequestRunning = true
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
+            session.dataTask(with: url) { (data, response, error) in
                 guard let data = data, error == nil else {
                     print("Search Request Error: \(error?.localizedDescription ?? "missing error")")
                     self.isSearchRequestRunning = false

@@ -1,0 +1,62 @@
+{
+    "data": [],
+    "meta": {
+        "query": {
+            "q": "wargadsd",
+            "state": [
+                "available"
+            ],
+            "facets": {},
+            "sort": "default"
+        },
+        "facets": [
+            {
+                "name": "Category",
+                "slug": "category",
+                "count": 0,
+                "count_truncated": false
+            },
+            {
+                "name": "Sale",
+                "slug": "sale",
+                "count_truncated": false
+            },
+            {
+                "name": "Model",
+                "slug": "model",
+                "count_truncated": false
+            },
+            {
+                "name": "Seller Location",
+                "slug": "seller_location",
+                "count_truncated": false
+            },
+            {
+                "name": "Item Type",
+                "slug": "item_type",
+                "count_truncated": false,
+                "children": [
+                    {
+                        "id": 3,
+                        "name": "Sold Items Only",
+                        "slug": "recently_sold",
+                        "count_truncated": false
+                    }
+                ]
+            },
+            {
+                "name": "Seller Type",
+                "slug": "seller_option",
+                "count_truncated": false
+            }
+        ],
+        "paging": {
+            "total_count": 0,
+            "total_count_truncated": false,
+            "total_pages": 0,
+            "page_size": 20,
+            "page": 1,
+            "has_next_page": false
+        }
+    }
+}

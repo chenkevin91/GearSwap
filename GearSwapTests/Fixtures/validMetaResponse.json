@@ -1,0 +1,841 @@
+{
+    "query": {
+        "q": "nike",
+        "state": [
+            "available"
+        ],
+        "facets": {},
+        "sort": "default"
+    },
+    "facets": [
+        {
+            "name": "Category",
+            "slug": "category",
+            "count_truncated": false,
+            "children": [
+                {
+                    "id": 110231,
+                    "name": "Footwear",
+                    "slug": "footwear",
+                    "display": "pinned",
+                    "full_name": "Footwear",
+                    "url": "https://staging.sidelineswap.com/shop/footwear/l10908",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/135/b0e473f652203846_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/556/601/a27639b7e494bf79_original.jpeg",
+                    "count": 3449,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 1000,
+                    "name": "Lacrosse",
+                    "slug": "lacrosse",
+                    "display": "vertical",
+                    "full_name": "Lacrosse",
+                    "url": "https://staging.sidelineswap.com/shop/lacrosse/l74",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/085/162b16c2bc3ece6c_original.png",
+                    "count": 2800,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 110165,
+                    "name": "Apparel",
+                    "slug": "apparel",
+                    "display": "vertical",
+                    "full_name": "Apparel",
+                    "url": "https://staging.sidelineswap.com/shop/apparel/l485",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/134/45c150e6605277f4_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/289/035/f9890ffef86a8b21_original.jpeg",
+                    "count": 2800,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 6000,
+                    "name": "Football",
+                    "slug": "football",
+                    "display": "pinned",
+                    "full_name": "Football",
+                    "url": "https://staging.sidelineswap.com/shop/football/l63",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/143/71e4e9d1854fdb8f_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/002/633/963/c91eff29e111b447_original.jpeg",
+                    "count": 1814,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 9000,
+                    "name": "Soccer",
+                    "slug": "soccer",
+                    "display": "pinned",
+                    "full_name": "Soccer",
+                    "url": "https://staging.sidelineswap.com/shop/soccer/l59",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/144/c5558b9d0a597523_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/002/543/735/d6c0b8b7eda36dcb_original.jpeg",
+                    "count": 1152,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 4000,
+                    "name": "Baseball",
+                    "slug": "baseball",
+                    "display": "vertical",
+                    "full_name": "Baseball",
+                    "url": "https://staging.sidelineswap.com/shop/baseball/l57",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/086/3e8300bf511ca653_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/003/261/559/02f5cff6975aafe6_original.jpeg",
+                    "count": 1138,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 5000,
+                    "name": "Basketball",
+                    "slug": "basketball",
+                    "display": "pinned",
+                    "full_name": "Basketball",
+                    "url": "https://staging.sidelineswap.com/shop/basketball/l61",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/141/6e0e6e73a25c4851_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/267/193/21fa6dc2a4afc88b_original.jpeg",
+                    "count": 879,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 7000,
+                    "name": "Golf",
+                    "slug": "golf",
+                    "display": "vertical",
+                    "full_name": "Golf",
+                    "url": "https://staging.sidelineswap.com/shop/golf/l62",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/137/02052e92fed835d6_original.png",
+                    "count": 336,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 2000,
+                    "name": "Hockey",
+                    "slug": "hockey",
+                    "display": "vertical",
+                    "full_name": "Hockey",
+                    "url": "https://staging.sidelineswap.com/shop/hockey/l30",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/084/4bf7777ca69756c0_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/401/465/f0ee976f522c7ef1_original.jpeg",
+                    "count": 296,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 10000,
+                    "name": "Softball",
+                    "slug": "softball",
+                    "display": "pinned",
+                    "full_name": "Softball",
+                    "url": "https://staging.sidelineswap.com/shop/softball/l64",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/136/3de6659355ccbc18_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/136/138/57a21417e02f90ab_original.jpeg",
+                    "count": 184,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 101003,
+                    "name": "Women's Lacrosse",
+                    "slug": "womens-lacrosse",
+                    "display": "pinned",
+                    "full_name": "Women's Lacrosse",
+                    "url": "https://staging.sidelineswap.com/shop/womens-lacrosse/l66",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/146/f2d67692d43ec3bc_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/354/512/e426022cadced89c_original.jpeg",
+                    "count": 156,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 110173,
+                    "name": "Other",
+                    "slug": "other-others",
+                    "display": "pinned",
+                    "full_name": "Other",
+                    "url": "https://staging.sidelineswap.com/shop/other-others/l483",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/661/338/dac8c9f8ef0be6ec_original.jpeg",
+                    "count": 36,
+                    "count_truncated": false,
+                    "has_children": false
+                },
+                {
+                    "id": 110153,
+                    "name": "Tennis & Racquet Sports",
+                    "slug": "tennis-racquet-sports",
+                    "display": "pinned",
+                    "full_name": "Tennis & Racquet Sports",
+                    "url": "https://staging.sidelineswap.com/shop/tennis-racquet-sports/l590",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/145/773f6b7f217aadc5_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/935/328/d2b9c62f43f78a9d_original.jpeg",
+                    "count": 28,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 8000,
+                    "name": "Snowboarding",
+                    "slug": "snowboarding",
+                    "display": "pinned",
+                    "full_name": "Snowboarding",
+                    "url": "https://staging.sidelineswap.com/shop/snowboarding/l65",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/140/bf370fde8fe7e529_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/002/196/693/3939f0e60aa451f6_original.jpeg",
+                    "count": 28,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 3000,
+                    "name": "Skiing",
+                    "slug": "skiing",
+                    "display": "vertical",
+                    "full_name": "Skiing",
+                    "url": "https://staging.sidelineswap.com/shop/skiing/l36",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/139/cb3aeae91abef1a4_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/914/901/911e8227700cbdea_original.jpeg",
+                    "count": 23,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 110000,
+                    "name": "Bikes",
+                    "slug": "bikes",
+                    "display": "vertical",
+                    "full_name": "Bikes",
+                    "url": "https://staging.sidelineswap.com/shop/bikes/l292",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/138/2af16c1eecf46e30_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/662/352/2dd1356048bfaef5_original.jpeg",
+                    "count": 7,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 110581,
+                    "name": "Memorabilia",
+                    "slug": "memorabilia",
+                    "display": "pinned",
+                    "full_name": "Memorabilia",
+                    "url": "https://staging.sidelineswap.com/shop/memorabilia/l11542",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/515/599/6de2c3bd7cc06d51_original.jpeg",
+                    "count": 6,
+                    "count_truncated": false,
+                    "has_children": false
+                },
+                {
+                    "id": 110475,
+                    "name": "Hike & Camp",
+                    "slug": "hike-camp",
+                    "display": "pinned",
+                    "full_name": "Hike & Camp",
+                    "url": "https://staging.sidelineswap.com/shop/hike-camp/l11382",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/149/7393c1920711a5a5_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/002/022/449/4d1e3ce7d755deb1_original.jpeg",
+                    "count": 5,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 110168,
+                    "name": "Fitness",
+                    "slug": "fitness",
+                    "display": "pinned",
+                    "full_name": "Fitness",
+                    "url": "https://staging.sidelineswap.com/shop/fitness/l488",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/148/e85d2880a178facb_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/002/401/277/e54db47bdd46f9ac_original.jpeg",
+                    "count": 4,
+                    "count_truncated": false,
+                    "has_children": false
+                },
+                {
+                    "id": 110171,
+                    "name": "Skateboarding",
+                    "slug": "skateboarding",
+                    "display": "pinned",
+                    "full_name": "Skateboarding",
+                    "url": "https://staging.sidelineswap.com/shop/skateboarding/l491",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/002/675/657/b1725fcae50d8e5c_original.jpeg",
+                    "count": 4,
+                    "count_truncated": false,
+                    "has_children": false
+                },
+                {
+                    "id": 110166,
+                    "name": "Electronics",
+                    "slug": "electronics",
+                    "display": "pinned",
+                    "full_name": "Electronics",
+                    "url": "https://staging.sidelineswap.com/shop/electronics/l484",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/001/549/669/818653776d94fde4_original.jpeg",
+                    "count": 2,
+                    "count_truncated": false,
+                    "has_children": false
+                },
+                {
+                    "id": 110574,
+                    "name": "Figure Skating",
+                    "slug": "figure-skating",
+                    "display": "pinned",
+                    "full_name": "Figure Skating",
+                    "url": "https://staging.sidelineswap.com/shop/figure-skating/l11535",
+                    "icon_url": "https://images.sidelineswap.com/staging/003/333/147/c76c1ba99804d5ff_original.png",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/002/055/526/198e04eb519804b1_original.jpeg",
+                    "count": 1,
+                    "count_truncated": false,
+                    "has_children": true
+                },
+                {
+                    "id": 110605,
+                    "name": "Wrestling",
+                    "slug": "wrestling",
+                    "display": "pinned",
+                    "full_name": "Wrestling",
+                    "url": "https://staging.sidelineswap.com/shop/wrestling/l11604",
+                    "pinned_image_url": "https://images.sidelineswap.com/production/003/248/507/52e0e7e630c1e521_original.jpeg",
+                    "count": 1,
+                    "count_truncated": false,
+                    "has_children": false
+                }
+            ]
+        },
+        {
+            "name": "Sale",
+            "slug": "sale",
+            "count_truncated": false
+        },
+        {
+            "name": "Brand",
+            "slug": "brand",
+            "count_truncated": false,
+            "children": [
+                {
+                    "id": 32,
+                    "name": "Nike",
+                    "slug": "nike",
+                    "count": 7593,
+                    "count_truncated": false
+                },
+                {
+                    "id": 30,
+                    "name": "Other",
+                    "slug": "other-brands",
+                    "count": 256,
+                    "count_truncated": false
+                },
+                {
+                    "id": 68,
+                    "name": "Bauer",
+                    "slug": "bauer",
+                    "count": 94,
+                    "count_truncated": false
+                },
+                {
+                    "id": 1,
+                    "name": "Adidas",
+                    "slug": "adidas",
+                    "count": 70,
+                    "count_truncated": false
+                },
+                {
+                    "id": 33,
+                    "name": "STX",
+                    "slug": "stx",
+                    "count": 24,
+                    "count_truncated": false
+                },
+                {
+                    "id": 329,
+                    "name": "Air Jordan",
+                    "slug": "air-jordan",
+                    "count": 21,
+                    "count_truncated": false
+                },
+                {
+                    "id": 7,
+                    "name": "Under Armour",
+                    "slug": "under-armour",
+                    "count": 15,
+                    "count_truncated": false
+                },
+                {
+                    "id": 14,
+                    "name": "East Coast Dyes",
+                    "slug": "east-coast-dyes",
+                    "count": 10,
+                    "count_truncated": false
+                },
+                {
+                    "id": 5,
+                    "name": "Maverik",
+                    "slug": "maverik",
+                    "count": 10,
+                    "count_truncated": false
+                },
+                {
+                    "id": 4,
+                    "name": "Cascade",
+                    "slug": "cascade",
+                    "count": 6,
+                    "count_truncated": false
+                },
+                {
+                    "id": 15,
+                    "name": "StringKing",
+                    "slug": "string-king",
+                    "count": 6,
+                    "count_truncated": false
+                },
+                {
+                    "id": 291,
+                    "name": "Wilson",
+                    "slug": "wilson",
+                    "count": 6,
+                    "count_truncated": false
+                },
+                {
+                    "id": 24237,
+                    "name": "Jordan",
+                    "slug": "brand-jordan",
+                    "count": 4,
+                    "count_truncated": false
+                },
+                {
+                    "id": 287,
+                    "name": "Mizuno",
+                    "slug": "mizuno",
+                    "count": 4,
+                    "count_truncated": false
+                },
+                {
+                    "id": 338,
+                    "name": "Puma",
+                    "slug": "puma",
+                    "count": 3,
+                    "count_truncated": false
+                },
+                {
+                    "id": 289,
+                    "name": "Rawlings",
+                    "slug": "rawlings",
+                    "count": 3,
+                    "count_truncated": false
+                },
+                {
+                    "id": 2,
+                    "name": "Warrior",
+                    "slug": "warrior",
+                    "count": 3,
+                    "count_truncated": false
+                },
+                {
+                    "id": 3,
+                    "name": "Brine",
+                    "slug": "brine",
+                    "count": 2,
+                    "count_truncated": false
+                },
+                {
+                    "id": 23220,
+                    "name": "Epoch",
+                    "slug": "epoch",
+                    "count": 2,
+                    "count_truncated": false
+                },
+                {
+                    "id": 290,
+                    "name": "Louisville Slugger",
+                    "slug": "louisville-slugger",
+                    "count": 2,
+                    "count_truncated": false
+                },
+                {
+                    "id": 6,
+                    "name": "Reebok",
+                    "slug": "reebok",
+                    "count": 2,
+                    "count_truncated": false
+                },
+                {
+                    "id": 24233,
+                    "name": "Riddell",
+                    "slug": "brand-riddell",
+                    "count": 1,
+                    "count_truncated": false
+                },
+                {
+                    "id": 69,
+                    "name": "CCM",
+                    "slug": "ccm",
+                    "count": 1,
+                    "count_truncated": false
+                },
+                {
+                    "id": 298,
+                    "name": "Franklin",
+                    "slug": "franklin",
+                    "count": 1,
+                    "count_truncated": false
+                },
+                {
+                    "id": 8,
+                    "name": "New Balance",
+                    "slug": "new-balance",
+                    "count": 1,
+                    "count_truncated": false
+                },
+                {
+                    "id": 72,
+                    "name": "Oakley",
+                    "slug": "oakley",
+                    "count": 1,
+                    "count_truncated": false
+                },
+                {
+                    "id": 23955,
+                    "name": "Sher-Wood",
+                    "slug": "sherwood",
+                    "count": 1,
+                    "count_truncated": false
+                },
+                {
+                    "id": 23452,
+                    "name": "Shimano",
+                    "slug": "shimano",
+                    "count": 1,
+                    "count_truncated": false
+                },
+                {
+                    "id": 23199,
+                    "name": "True",
+                    "slug": "true",
+                    "count": 1,
+                    "count_truncated": false
+                }
+            ]
+        },
+        {
+            "name": "Condition",
+            "slug": "condition",
+            "count_truncated": false,
+            "children": [
+                {
+                    "id": 17,
+                    "name": "Used",
+                    "slug": "used",
+                    "count": 4412,
+                    "count_truncated": false
+                },
+                {
+                    "id": 31,
+                    "name": "New",
+                    "slug": "new",
+                    "count": 3734,
+                    "count_truncated": false
+                }
+            ]
+        },
+        {
+            "name": "Model",
+            "slug": "model",
+            "count_truncated": false,
+            "children": [
+                {
+                    "id": 14079,
+                    "name": "ALPHA",
+                    "slug": "alpha-5",
+                    "count": 104,
+                    "count_truncated": false
+                },
+                {
+                    "id": 11091,
+                    "name": "Huarache",
+                    "slug": "huarache-2",
+                    "count": 93,
+                    "count_truncated": false
+                },
+                {
+                    "id": 16598,
+                    "name": "Lakota U",
+                    "slug": "lakota-u",
+                    "count": 88,
+                    "count_truncated": false
+                },
+                {
+                    "id": 7682,
+                    "name": "Lakota",
+                    "slug": "lakota",
+                    "count": 81,
+                    "count_truncated": false
+                },
+                {
+                    "id": 10440,
+                    "name": "Huarache",
+                    "slug": "huarache",
+                    "count": 77,
+                    "count_truncated": false
+                },
+                {
+                    "id": 130,
+                    "name": "CEO",
+                    "slug": "ceo",
+                    "count": 63,
+                    "count_truncated": false
+                },
+                {
+                    "id": 258,
+                    "name": "Vapor Elite",
+                    "slug": "vapor-elite",
+                    "count": 60,
+                    "count_truncated": false
+                },
+                {
+                    "id": 10847,
+                    "name": "Vapor",
+                    "slug": "vapor-9092",
+                    "count": 54,
+                    "count_truncated": false
+                },
+                {
+                    "id": 10785,
+                    "name": "Mercurial Superfly",
+                    "slug": "mercurial-superfly",
+                    "count": 49,
+                    "count_truncated": false
+                },
+                {
+                    "id": 18946,
+                    "name": "Air Clipper",
+                    "slug": "air-clipper",
+                    "count": 48,
+                    "count_truncated": false
+                },
+                {
+                    "id": 7518,
+                    "name": "Vapor",
+                    "slug": "vapor-4",
+                    "count": 47,
+                    "count_truncated": false
+                },
+                {
+                    "id": 12230,
+                    "name": "vapor",
+                    "slug": "vapor-9087",
+                    "count": 46,
+                    "count_truncated": false
+                },
+                {
+                    "id": 12664,
+                    "name": "Hypervenoms",
+                    "slug": "hypervenoms",
+                    "count": 45,
+                    "count_truncated": false
+                },
+                {
+                    "id": 390,
+                    "name": "Huarache 5",
+                    "slug": "huarache-5",
+                    "count": 43,
+                    "count_truncated": false
+                },
+                {
+                    "id": 13608,
+                    "name": "Mercurial Vapor",
+                    "slug": "mercurial-vapor",
+                    "count": 43,
+                    "count_truncated": false
+                },
+                {
+                    "id": 15848,
+                    "name": "Trout",
+                    "slug": "trout-4",
+                    "count": 43,
+                    "count_truncated": false
+                },
+                {
+                    "id": 384,
+                    "name": "Vapor Untouchable Pro",
+                    "slug": "vapor-untouchable-pro",
+                    "count": 43,
+                    "count_truncated": false
+                },
+                {
+                    "id": 12744,
+                    "name": "Lunar Vapor UltraFly Elite",
+                    "slug": "lunar-vapor-ultrafly-elite",
+                    "count": 37,
+                    "count_truncated": false
+                },
+                {
+                    "id": 11573,
+                    "name": "Alpha Huarache 6 Elite",
+                    "slug": "alpha-huarache-6-elite-2",
+                    "count": 35,
+                    "count_truncated": false
+                },
+                {
+                    "id": 12746,
+                    "name": "Air Huarache 2KFilth Elite Low",
+                    "slug": "air-huarache-2kfilth-elite-low",
+                    "count": 34,
+                    "count_truncated": false
+                },
+                {
+                    "id": 20511,
+                    "name": "Air Huarache 2K Filth Elite",
+                    "slug": "air-huarache-2k-filth-elite",
+                    "count": 32,
+                    "count_truncated": false
+                },
+                {
+                    "id": 4,
+                    "name": "Lakota 2",
+                    "slug": "lakota-2",
+                    "count": 31,
+                    "count_truncated": false
+                },
+                {
+                    "id": 11972,
+                    "name": "Alpha Menace",
+                    "slug": "alpha-menace-2",
+                    "count": 29,
+                    "count_truncated": false
+                },
+                {
+                    "id": 20261,
+                    "name": "Alpha Huarache Elite",
+                    "slug": "alpha-huarache-elite",
+                    "count": 28,
+                    "count_truncated": false
+                }
+            ]
+        },
+        {
+            "name": "Seller Location",
+            "slug": "seller_location",
+            "count_truncated": false,
+            "children": [
+                {
+                    "id": 24586,
+                    "name": "United States (All)",
+                    "slug": "seller-location-us",
+                    "count": 7957,
+                    "count_truncated": false
+                },
+                {
+                    "id": 24588,
+                    "name": "US: Northeast",
+                    "slug": "seller-location-us-northeast",
+                    "count": 2844,
+                    "count_truncated": false
+                },
+                {
+                    "id": 24589,
+                    "name": "US: South",
+                    "slug": "seller-location-us-south",
+                    "count": 2302,
+                    "count_truncated": false
+                },
+                {
+                    "id": 24587,
+                    "name": "US: Midwest",
+                    "slug": "seller-location-us-midwest",
+                    "count": 1461,
+                    "count_truncated": false
+                },
+                {
+                    "id": 24590,
+                    "name": "US: West",
+                    "slug": "seller-location-us-west",
+                    "count": 1334,
+                    "count_truncated": false
+                },
+                {
+                    "id": 24591,
+                    "name": "Canada",
+                    "slug": "seller-location-ca",
+                    "count": 240,
+                    "count_truncated": false
+                }
+            ]
+        },
+        {
+            "name": "Item Type",
+            "slug": "item_type",
+            "count_truncated": false,
+            "children": [
+                {
+                    "id": 1,
+                    "name": "Accepts Offers",
+                    "slug": "accepts_offers",
+                    "count": 8173,
+                    "count_truncated": false
+                },
+                {
+                    "id": 3,
+                    "name": "Sold Items Only",
+                    "slug": "recently_sold",
+                    "count_truncated": false
+                }
+            ]
+        },
+        {
+            "name": "Seller Type",
+            "slug": "seller_option",
+            "count_truncated": false,
+            "children": [
+                {
+                    "id": 1,
+                    "name": "Elite Sellers",
+                    "slug": "user_elite",
+                    "count": 2327,
+                    "count_truncated": false
+                },
+                {
+                    "id": 2,
+                    "name": "Fast Shippers",
+                    "slug": "user_fast_shipper",
+                    "count": 3525,
+                    "count_truncated": false
+                },
+                {
+                    "id": 3,
+                    "name": "Shops (Businesses)",
+                    "slug": "user_verified_business",
+                    "count": 26,
+                    "count_truncated": false
+                },
+                {
+                    "id": 4,
+                    "name": "Verified Athletes",
+                    "slug": "user_verified",
+                    "count": 214,
+                    "count_truncated": false
+                },
+                {
+                    "id": 5,
+                    "name": "Lockers (Individuals)",
+                    "slug": "user_verified_business",
+                    "count": 8171,
+                    "count_truncated": false
+                }
+            ]
+        }
+    ],
+    "paging": {
+        "total_count": 8197,
+        "total_count_truncated": false,
+        "total_pages": 410,
+        "page_size": 20,
+        "page": 1,
+        "has_next_page": true
+    }
+}

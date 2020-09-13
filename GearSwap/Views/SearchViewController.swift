@@ -30,7 +30,7 @@ class SearchViewController: UIViewController {
     private let itemsPerRow: CGFloat = 2
     private let refreshControl = UIRefreshControl()
 
-    var presenter = SearchPresenter()
+    var presenter = SearchPresenter(session: URLSession.shared)
     var items = [ItemViewModel]()
 
     override func viewDidLoad() {
@@ -74,11 +74,11 @@ extension SearchViewController: SearchViewProtocol {
     }
 
     func update(status: String) {
-        let alert = UIAlertController(title: nil, message: status, preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-        alert.addAction(okayAction)
-
         DispatchQueue.main.async {
+            let alert = UIAlertController(title: nil, message: status, preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(okayAction)
+
             self.refreshControl.endRefreshing()
             self.activityIndicator.stopAnimating()
             self.collectionView.alpha = 1.0
