@@ -69,6 +69,20 @@ class SearchPresenterTests: XCTestCase {
         XCTAssertEqual(spyView.givenStatus, "Sorry, something went wrong. Please try again.")
     }
 
+    func testBadResponseData() {
+        let spyView = SpySearchView()
+        sut.attach(spyView)
+        mockSession.nextData = nil
+
+        XCTAssertFalse(spyView.updateStatusWasCalled)
+        XCTAssertNil(spyView.givenStatus)
+
+        sut.getSearchResults(" ", fromRefreshControl: false)
+
+        XCTAssertTrue(spyView.updateStatusWasCalled)
+        XCTAssertEqual(spyView.givenStatus, "Sorry, something went wrong. Please try again.")
+    }
+
     func testSearchFromRefreshControl() {
         let spyView = SpySearchView()
         sut.attach(spyView)
@@ -100,13 +114,34 @@ class SearchPresenterTests: XCTestCase {
 
         XCTAssertEqual(mockSession.lastURL?.query, "q=nike%20bag&page=2")
     }
+
+    func testNoMorePages() {
+        let spyView = SpySearchView()
+        sut.attach(spyView)
+
+        let path = Bundle(for: type(of: self)).path(forResource: "finalPageSearchResponse", ofType: "json")!
+        mockSession.nextData = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+
+        XCTAssertEqual(spyView.updateCount, 0)
+
+        sut.getSearchResults("nike bag", fromRefreshControl: false)
+
+        XCTAssertEqual(spyView.updateCount, 1)
+
+        sut.getSearchResults()
+
+        XCTAssertEqual(spyView.updateCount, 1)
+    }
 }
 
 extension SearchPresenterTests {
     class SpySearchView: SearchViewProtocol {
+        var updateCount = 0
+
         var updateItemViewModelWasCalled = false
         func update(itemViewModel: [ItemViewModel]) {
             updateItemViewModelWasCalled = true
+            updateCount += 1
         }
 
         var updateStatusWasCalled = false
@@ -114,6 +149,7 @@ extension SearchPresenterTests {
         func update(status: String) {
             updateStatusWasCalled = true
             givenStatus = status
+            updateCount += 1
         }
     }
 }

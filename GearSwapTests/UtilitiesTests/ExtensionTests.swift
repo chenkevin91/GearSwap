@@ -13,18 +13,21 @@ class ExtensionTests: XCTestCase {
     func testDoubleFormattedToCurrency() {
         let test1 = 0.0
         let test2 = 1.0
-        let test3 = 2.5
+        let test3 = 2.50
         let test4 = 124.0
+        let test5 = 44.66
 
         let expected1 = "$0"
         let expected2 = "$1"
         let expected3 = "$2"
         let expected4 = "$124"
+        let expected5 = "$45"
 
         XCTAssertEqual(test1.formattedToCurrency(), expected1)
         XCTAssertEqual(test2.formattedToCurrency(), expected2)
         XCTAssertEqual(test3.formattedToCurrency(), expected3)
         XCTAssertEqual(test4.formattedToCurrency(), expected4)
+        XCTAssertEqual(test5.formattedToCurrency(), expected5)
     }
 
     func testGrayBorder() {

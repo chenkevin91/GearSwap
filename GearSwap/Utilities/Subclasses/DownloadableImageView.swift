@@ -10,7 +10,7 @@ import UIKit
 
 class DownloadableImageView: UIImageView {
     var lastUsedUrl: URL?
-    let imageHelper = ImageHelper()
+    let imageHelper = ImageHelper(session: URLSession.shared)
 
     func getImage(from urlString: String?) {
         self.image = nil

@@ -24,7 +24,6 @@ class SearchViewController: UIViewController {
     @IBOutlet private (set) var collectionView: UICollectionView!
     @IBOutlet private (set) var searchBar: UISearchBar!
     @IBOutlet private (set) var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet private (set) var basketballImageView: UIImageView!
 
     private let sectionInsets = UIEdgeInsets(top: 24.0, left: 8.0, bottom: 24.0, right: 8.0)
     private let itemsPerRow: CGFloat = 2

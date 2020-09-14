@@ -7,27 +7,43 @@
 //
 
 import XCTest
+@testable import GearSwap
 
 class ImageHelperTests: XCTestCase {
+    var sut: ImageHelper!
+    let mockSession = MockURLSession()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        sut = ImageHelper(session: mockSession)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        mockSession.nextData = nil
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetImage() {
+        let url = URL(string: "https://mockurl")
+        mockSession.nextData = UIImage.checkmark.pngData()
+
+        var testImageURL: URL?
+
+        XCTAssertNil(testImageURL)
+
+        sut.getImage(from: url!) { imageResult in
+            testImageURL = imageResult?.url
+        }
+
+        XCTAssertEqual(testImageURL?.absoluteString, "https://mockurl")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testBadData() {
+        let url = URL(string: "https://mockurl")
+        mockSession.nextData = nil
+
+        sut.getImage(from: url!) { imageResult in
+            XCTAssertNil(imageResult)
         }
     }
-
 }

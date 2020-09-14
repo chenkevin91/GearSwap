@@ -33,14 +33,20 @@ class ImageCache {
 
 struct ImageHelper {
     private let cache = ImageCache()
+    private let session: URLSessionProtocol
+
+    init(session: URLSessionProtocol) {
+        self.session = session
+    }
 
     func getImage(from url: URL, completion: @escaping (ImageResult?) ->()) {
         if let image = cache.image(for: url) {
             completion(ImageResult(image: image, url: url))
         } else {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
+            session.dataTask(with: url) { (data, response, error) in
                 guard let data = data, error == nil else {
                     print("Image Request Error: \(error?.localizedDescription ?? "missing error")")
+                    completion(nil)
                     return
                 }
 

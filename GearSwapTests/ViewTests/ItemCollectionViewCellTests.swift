@@ -7,27 +7,32 @@
 //
 
 import XCTest
+@testable import GearSwap
 
 class ItemCollectionViewCellTests: XCTestCase {
+    var sut = Bundle.main.loadNibNamed("ItemCollectionViewCell", owner: nil, options: nil)?.first { nibView -> Bool in
+        nibView is UIView
+    } as? ItemCollectionViewCell
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testAwakeFromNib() {
+        sut?.awakeFromNib()
+
+        XCTAssertNotNil(sut?.nameLabel)
+        XCTAssertNotNil(sut?.priceLabel)
+        XCTAssertNotNil(sut?.sellerLabel)
+        XCTAssertNotNil(sut?.imageView)
+
+        XCTAssertEqual(sut?.nameLabel.font, UIFont.largeBoldFont)
+        XCTAssertEqual(sut?.priceLabel.font, UIFont.largeBoldFont)
+        XCTAssertEqual(sut?.sellerLabel.font, UIFont.smallFont)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testConfigure() {
+        sut?.configure(title: "nike bag", price: "$20", seller: "kevin", imageURL: "")
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertEqual(sut?.nameLabel.text, "nike bag")
+        XCTAssertEqual(sut?.priceLabel.text, "$20")
+        XCTAssertEqual(sut?.sellerLabel.text, "kevin")
+        XCTAssertNil(sut?.imageView.image)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
