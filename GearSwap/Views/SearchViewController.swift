@@ -39,12 +39,13 @@ class SearchViewController: UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "ItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ItemCollectionViewCellID")
+        collectionView.register(UINib(nibName: Constants.CollectionViewCells.itemCollectionViewCellName, bundle: nil),
+                                forCellWithReuseIdentifier: Constants.CollectionViewCells.itemCollectionViewCellIdentifier)
         collectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshSearch), for: .valueChanged)
 
         searchBar.delegate = self
-        searchBar.placeholder = "Search for new and used gear"
+        searchBar.placeholder = Constants.Business.searchBarPlaceholder
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGestureRecognizer)
@@ -75,7 +76,7 @@ extension SearchViewController: SearchViewProtocol {
     func update(status: String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: nil, message: status, preferredStyle: .alert)
-            let okayAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            let okayAction = UIAlertAction(title: Constants.Business.alertConfirmButton, style: .default, handler: nil)
             alert.addAction(okayAction)
 
             self.refreshControl.endRefreshing()
@@ -92,7 +93,8 @@ extension SearchViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCellID", for: indexPath) as! ItemCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CollectionViewCells.itemCollectionViewCellIdentifier,
+                                                      for: indexPath) as! ItemCollectionViewCell
         let item = items[indexPath.row]
 
         cell.configure(title: item.name, price: item.price, seller: item.seller, imageURL: item.imageURL)

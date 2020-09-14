@@ -28,16 +28,16 @@ class SearchPresenter {
     }
 
     func getSearchResults(_ item: String? = nil, fromRefreshControl: Bool = false) {
-        var urlComponent = URLComponents(string: "https://api.staging.sidelineswap.com/v1/facet_items")
+        var urlComponent = URLComponents(string: Constants.API.url)
         if item == nil, let previousItem = previousSearchedItem, let page = page {
             guard hasNextPage || fromRefreshControl else {
                 return
             }
-            let itemQueryItem = URLQueryItem(name: "q", value: previousItem)
-            let pageQueryItem = URLQueryItem(name: "page", value: String(page+1))
+            let itemQueryItem = URLQueryItem(name: Constants.API.queryParameter, value: previousItem)
+            let pageQueryItem = URLQueryItem(name: Constants.API.pageParameter, value: String(page+1))
             urlComponent?.queryItems = fromRefreshControl ? [itemQueryItem] : [itemQueryItem, pageQueryItem]
         } else {
-            urlComponent?.queryItems = [URLQueryItem(name: "q", value: item)]
+            urlComponent?.queryItems = [URLQueryItem(name: Constants.API.queryParameter, value: item)]
             previousSearchedItem = item
         }
 
@@ -47,7 +47,7 @@ class SearchPresenter {
                 guard let data = data, error == nil else {
                     print("Search Request Error: \(error?.localizedDescription ?? "missing error")")
                     self.isSearchRequestRunning = false
-                    self.view?.update(status: "Sorry, something went wrong. Please try again.")
+                    self.view?.update(status: Constants.ErrorHandling.defaultErrorMessage)
                     return
                 }
 
@@ -64,14 +64,14 @@ class SearchPresenter {
                     }
                     self.isSearchRequestRunning = false
                     if searchResponse.data.isEmpty {
-                        self.view?.update(status: "No results matching your search. Please try again.")
+                        self.view?.update(status: Constants.ErrorHandling.emptyResults)
                     } else {
                         self.view?.update(itemViewModel: self.itemViewModels)
                     }
                     
                 } else {
                     self.isSearchRequestRunning = false
-                    self.view?.update(status: "Sorry, something went wrong. Please try again.")
+                    self.view?.update(status: Constants.ErrorHandling.defaultErrorMessage)
                 }
             }.resume()
         }

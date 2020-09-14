@@ -46,6 +46,7 @@
 		84E5F1C0250E84FB005467A8 /* ItemCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F1BF250E84FB005467A8 /* ItemCollectionViewCellTests.swift */; };
 		84E5F1C2250E876B005467A8 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F1C1250E876B005467A8 /* SearchViewControllerTests.swift */; };
 		84E5F1C4250FA04B005467A8 /* finalPageSearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 84E5F1C3250FA04B005467A8 /* finalPageSearchResponse.json */; };
+		84E5F1C6250FACB5005467A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E5F1C5250FACB5005467A8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		84E5F1BF250E84FB005467A8 /* ItemCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		84E5F1C1250E876B005467A8 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 		84E5F1C3250FA04B005467A8 /* finalPageSearchResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = finalPageSearchResponse.json; sourceTree = "<group>"; };
+		84E5F1C5250FACB5005467A8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				84E3E339250AC0DB00C6D2BC /* Presenters */,
 				841432F7250D369900612F96 /* Utilities */,
 				84E3E338250AC0C700C6D2BC /* Views */,
+				84E5F1C5250FACB5005467A8 /* Constants.swift */,
 				84E3E315250ABEF100C6D2BC /* AppDelegate.swift */,
 				841432E0250AE74A00612F96 /* SceneDelegate.swift */,
 				84E3E31E250ABEF200C6D2BC /* Assets.xcassets */,
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				841432FB250D7BC200612F96 /* DownloadableImageView.swift in Sources */,
+				84E5F1C6250FACB5005467A8 /* Constants.swift in Sources */,
 				841432E5250BBEB100612F96 /* Seller.swift in Sources */,
 				84E3E31A250ABEF100C6D2BC /* SearchViewController.swift in Sources */,
 				841432E9250BC00A00612F96 /* Image.swift in Sources */,
